@@ -1,4 +1,3 @@
-#! https://zhuanlan.zhihu.com/p/549572824
 # 从辐射度量学理解BRDF
 
 

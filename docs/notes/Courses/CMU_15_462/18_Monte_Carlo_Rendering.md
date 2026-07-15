@@ -1,4 +1,3 @@
-#! https://zhuanlan.zhihu.com/p/545566323
 # 蒙特卡洛渲染
 ### Photorealistic Rendering
 渲染一张真实感图片需要： 

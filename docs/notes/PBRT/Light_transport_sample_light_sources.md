@@ -1,4 +1,3 @@
-#! https://zhuanlan.zhihu.com/p/568205778
 # PBRT 光线传输之光源采样
 
 ## overview

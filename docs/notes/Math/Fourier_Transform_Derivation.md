@@ -1,4 +1,3 @@
-#! https://zhuanlan.zhihu.com/p/546428695
 # 傅里叶变换推导 Fourier Transform Derivation
 
 **Prerequisite**

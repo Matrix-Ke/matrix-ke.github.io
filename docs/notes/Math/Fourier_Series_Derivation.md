@@ -1,4 +1,3 @@
-#! https://zhuanlan.zhihu.com/p/545524628
 # 傅里叶级数推导
 
 

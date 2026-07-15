@@ -1,4 +1,3 @@
-#! https://zhuanlan.zhihu.com/p/559732914
 # Games103 刚体模拟
 
 **最终效果**

@@ -1,4 +1,3 @@
-#! https://zhuanlan.zhihu.com/p/565731092
 # 从TBN变换到UV展开
 
 ### 带着问题去学习

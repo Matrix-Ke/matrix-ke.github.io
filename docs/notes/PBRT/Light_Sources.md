@@ -1,4 +1,3 @@
-#! https://zhuanlan.zhihu.com/p/575658525
 # PBRT 光源
 
 **overview：**

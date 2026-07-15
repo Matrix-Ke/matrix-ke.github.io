@@ -1,4 +1,3 @@
-#! https://zhuanlan.zhihu.com/p/545564030
 # 从BRDF散射模型建立渲染方程 The Rendering Equation
 ### prerequisite 
 理解radiance和irradiance

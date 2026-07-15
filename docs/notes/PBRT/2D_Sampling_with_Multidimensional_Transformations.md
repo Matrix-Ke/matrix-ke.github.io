@@ -1,4 +1,3 @@
-#! https://zhuanlan.zhihu.com/p/552773776
 # 多维空间下的均匀采样方法
 
 **前言**

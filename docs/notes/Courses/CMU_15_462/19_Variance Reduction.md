@@ -1,4 +1,3 @@
-#! https://zhuanlan.zhihu.com/p/568334824
 # 蒙特卡洛采样方差减少方法
 
 ### Overview

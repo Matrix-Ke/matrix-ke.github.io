@@ -1,4 +1,3 @@
-#! https://zhuanlan.zhihu.com/p/562333262
 # Games103 布料模拟
 
 ### 效果实现

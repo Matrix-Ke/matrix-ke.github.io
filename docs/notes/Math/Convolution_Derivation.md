@@ -1,4 +1,3 @@
-#! https://zhuanlan.zhihu.com/p/547407165
 # Games101 采样理论知识补充
 
 **Prerequisite:**

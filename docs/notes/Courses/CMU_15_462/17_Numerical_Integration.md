@@ -1,4 +1,3 @@
-#! https://zhuanlan.zhihu.com/p/545565243
 # 数值积分 Numerical Integration
 数值积分是利用黎曼积分等数学定义，用数值逼近的方法近似计算给定的定积分值, 此篇文章使用蒙特卡洛数值积分求解渲染方程
 

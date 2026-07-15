@@ -1,4 +1,3 @@
-#! https://zhuanlan.zhihu.com/p/606198677
 # 记录 IBL 光照的几个核心问题
 
 ## 算法思想

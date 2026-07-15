@@ -1,4 +1,3 @@
-#! https://zhuanlan.zhihu.com/p/555867858
 # PBRT 光线传输之表面反射
 
 ## Overview 

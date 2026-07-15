@@ -1,4 +1,3 @@
-#! https://zhuanlan.zhihu.com/p/545992427
 # 欧拉公式总结
 
 **欧拉公式推导**

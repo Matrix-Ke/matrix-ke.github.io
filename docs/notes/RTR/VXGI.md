@@ -1,4 +1,3 @@
-#! https://zhuanlan.zhihu.com/p/579696507
 # VXGI 笔记
 
 ## 概览

@@ -1,4 +1,3 @@
-#! https://zhuanlan.zhihu.com/p/557061822
 # 图形学中的数学知识点
 
 **Prerequsite**

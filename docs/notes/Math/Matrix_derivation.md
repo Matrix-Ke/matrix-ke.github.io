@@ -1,4 +1,3 @@
-#! https://zhuanlan.zhihu.com/p/564642767
 # 理解矩阵求导
 
 ### 矩阵求导定义

@@ -1,4 +1,3 @@
-#! https://zhuanlan.zhihu.com/p/597828385
 # Skinning Matrix理解
 
 ## 前言

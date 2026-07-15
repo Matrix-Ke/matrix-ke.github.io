@@ -1,4 +1,3 @@
-#! https://zhuanlan.zhihu.com/p/554905095
 # 微表面模型 Microfacet Models
 
 ### OverView

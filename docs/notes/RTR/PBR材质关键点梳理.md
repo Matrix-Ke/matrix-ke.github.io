@@ -1,4 +1,3 @@
-#! https://zhuanlan.zhihu.com/p/568549413
 # PBR材质关键点梳理
 
 ### overview

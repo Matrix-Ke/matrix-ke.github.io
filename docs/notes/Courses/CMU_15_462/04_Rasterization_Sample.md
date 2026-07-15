@@ -1,4 +1,3 @@
-#! https://zhuanlan.zhihu.com/p/549175616
 # 光栅化和采样
 
 **Prerequisite**

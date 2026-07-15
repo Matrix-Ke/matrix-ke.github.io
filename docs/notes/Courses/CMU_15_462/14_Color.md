@@ -1,4 +1,3 @@
-#! https://zhuanlan.zhihu.com/p/551785904
 # 颜色和感知 Color and Perception
 
 ## 光学理论
