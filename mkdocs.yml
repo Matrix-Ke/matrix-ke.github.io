@@ -28,6 +28,7 @@ theme:
     - navigation.indexes
     - navigation.top
     - navigation.tracking
+    - navigation.footer
     - search.highlight
     - search.suggest
     - content.code.copy
@@ -46,12 +47,16 @@ markdown_extensions:
   - def_list
   - footnotes
   - md_in_html
+  - meta
   - tables
   - toc:
       permalink: true
   - pymdownx.arithmatex:
       generic: true
   - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - pymdownx.highlight:
       anchor_linenums: true
   - pymdownx.inlinehilite
@@ -63,6 +68,9 @@ markdown_extensions:
 extra_javascript:
   - javascripts/mathjax.js
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+
+extra_css:
+  - stylesheets/extra.css
 
 extra:
   social:
@@ -76,4 +84,3 @@ exclude_docs: |
   **/*.pdf
   **/PDF/**
   **/coursePPT/**
-
