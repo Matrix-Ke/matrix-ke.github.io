@@ -12,7 +12,7 @@ hide:
 
 <div class="home-hero__eyebrow"><span></span> MATRIX-KE · PERSONAL KNOWLEDGE BASE</div>
 
-# Graphics & Rendering Notes { .home-hero__title }
+# Matrix World { .home-hero__title }
 
 专注计算机图形学、物理渲染与实时渲染。这里记录从数学推导到工程实现的学习过程，也保存那些值得反复查阅的技术细节。
 
