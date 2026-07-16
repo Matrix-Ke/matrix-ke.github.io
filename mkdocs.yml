@@ -40,6 +40,9 @@ plugins:
         - zh
         - en
 
+hooks:
+  - hooks/math_fences.py
+
 markdown_extensions:
   - abbr
   - admonition
