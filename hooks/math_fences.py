@@ -4,7 +4,7 @@ import re
 
 
 _PROTECTED = re.compile(r"(```[\s\S]*?```|~~~[\s\S]*?~~~|`[^`\n]*`)")
-_DISPLAY_MATH = re.compile(r"(?<!\\)\$\$([\s\S]*?)(?<!\\)\$\$")
+_DISPLAY_MATH = re.compile(r"\$\$([\s\S]*?)\$\$")
 
 
 def _normalize(segment: str) -> str:
