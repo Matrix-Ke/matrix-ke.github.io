@@ -41,6 +41,128 @@ hide:
 
 </section>
 
+<section class="home-section portfolio-section">
+
+<div class="home-section__heading">
+  <h2 id="portfolio">Portfolio · 作品集</h2>
+  <p>从参数化建筑、空间设计到景观与手绘练习。可使用左右按钮、圆点或触摸滑动浏览全部作品。</p>
+</div>
+
+<div class="portfolio-carousel" data-carousel aria-label="Matrix-Ke 个人作品集" aria-roledescription="carousel">
+  <div class="portfolio-carousel__viewport" data-carousel-viewport tabindex="0" aria-label="作品图片轮播区域">
+    <div class="portfolio-carousel__track" data-carousel-track>
+      <figure class="portfolio-slide" data-carousel-slide data-caption="作品集目录" aria-hidden="false">
+        <img src="assets/portfolio/2目录.jpg" alt="个人作品集目录" loading="eager" fetchpriority="high" decoding="async">
+        <figcaption><span>01 / 24</span>作品集目录</figcaption>
+      </figure>
+      <figure class="portfolio-slide" data-carousel-slide data-caption="参数化办公楼" aria-hidden="true">
+        <img src="assets/portfolio/3办公楼-01.jpg" alt="参数化办公楼设计效果图" loading="lazy" decoding="async">
+        <figcaption><span>02 / 24</span>参数化办公楼</figcaption>
+      </figure>
+      <figure class="portfolio-slide" data-carousel-slide data-caption="参数化设计 · 内容 01" aria-hidden="true">
+        <img src="assets/portfolio/4内容-01.jpg" alt="参数化建筑设计内容第一页" loading="lazy" decoding="async">
+        <figcaption><span>03 / 24</span>参数化设计 · 内容 01</figcaption>
+      </figure>
+      <figure class="portfolio-slide" data-carousel-slide data-caption="参数化设计 · 内容 02" aria-hidden="true">
+        <img src="assets/portfolio/5内容-01.jpg" alt="参数化建筑设计内容第二页" loading="lazy" decoding="async">
+        <figcaption><span>04 / 24</span>参数化设计 · 内容 02</figcaption>
+      </figure>
+      <figure class="portfolio-slide" data-carousel-slide data-caption="参数化设计 · 内容 03" aria-hidden="true">
+        <img src="assets/portfolio/6内容-01.jpg" alt="参数化建筑设计内容第三页" loading="lazy" decoding="async">
+        <figcaption><span>05 / 24</span>参数化设计 · 内容 03</figcaption>
+      </figure>
+      <figure class="portfolio-slide" data-carousel-slide data-caption="参数化设计 · 内容 04" aria-hidden="true">
+        <img src="assets/portfolio/7内容-01.jpg" alt="参数化建筑设计内容第四页" loading="lazy" decoding="async">
+        <figcaption><span>06 / 24</span>参数化设计 · 内容 04</figcaption>
+      </figure>
+      <figure class="portfolio-slide" data-carousel-slide data-caption="坡地书吧 · 方案 01" aria-hidden="true">
+        <img src="assets/portfolio/8-书吧-01.jpg" alt="坡地书吧建筑设计方案第一页" loading="lazy" decoding="async">
+        <figcaption><span>07 / 24</span>坡地书吧 · 方案 01</figcaption>
+      </figure>
+      <figure class="portfolio-slide" data-carousel-slide data-caption="坡地书吧 · 方案 02" aria-hidden="true">
+        <img src="assets/portfolio/9-书吧-01.jpg" alt="坡地书吧建筑设计方案第二页" loading="lazy" decoding="async">
+        <figcaption><span>08 / 24</span>坡地书吧 · 方案 02</figcaption>
+      </figure>
+      <figure class="portfolio-slide" data-carousel-slide data-caption="坡地书吧 · 方案 03" aria-hidden="true">
+        <img src="assets/portfolio/10-书吧-01.jpg" alt="坡地书吧建筑设计方案第三页" loading="lazy" decoding="async">
+        <figcaption><span>09 / 24</span>坡地书吧 · 方案 03</figcaption>
+      </figure>
+      <figure class="portfolio-slide" data-carousel-slide data-caption="霍普杯竞赛 · 方案 01" aria-hidden="true">
+        <img src="assets/portfolio/11霍普杯-01.jpg" alt="霍普杯建筑竞赛方案第一页" loading="lazy" decoding="async">
+        <figcaption><span>10 / 24</span>霍普杯竞赛 · 方案 01</figcaption>
+      </figure>
+      <figure class="portfolio-slide" data-carousel-slide data-caption="霍普杯竞赛 · 方案 02" aria-hidden="true">
+        <img src="assets/portfolio/12霍普杯.jpg" alt="霍普杯建筑竞赛方案第二页" loading="lazy" decoding="async">
+        <figcaption><span>11 / 24</span>霍普杯竞赛 · 方案 02</figcaption>
+      </figure>
+      <figure class="portfolio-slide" data-carousel-slide data-caption="霍普杯竞赛 · 方案 03" aria-hidden="true">
+        <img src="assets/portfolio/13霍普杯-01.jpg" alt="霍普杯建筑竞赛方案第三页" loading="lazy" decoding="async">
+        <figcaption><span>12 / 24</span>霍普杯竞赛 · 方案 03</figcaption>
+      </figure>
+      <figure class="portfolio-slide" data-carousel-slide data-caption="霍普杯竞赛 · 方案 04" aria-hidden="true">
+        <img src="assets/portfolio/14霍普杯.jpg" alt="霍普杯建筑竞赛方案第四页" loading="lazy" decoding="async">
+        <figcaption><span>13 / 24</span>霍普杯竞赛 · 方案 04</figcaption>
+      </figure>
+      <figure class="portfolio-slide" data-carousel-slide data-caption="霍普杯竞赛 · 方案 05" aria-hidden="true">
+        <img src="assets/portfolio/15霍普杯-01.jpg" alt="霍普杯建筑竞赛方案第五页" loading="lazy" decoding="async">
+        <figcaption><span>14 / 24</span>霍普杯竞赛 · 方案 05</figcaption>
+      </figure>
+      <figure class="portfolio-slide" data-carousel-slide data-caption="霍普杯竞赛 · 方案 06" aria-hidden="true">
+        <img src="assets/portfolio/16霍普杯-01.jpg" alt="霍普杯建筑竞赛方案第六页" loading="lazy" decoding="async">
+        <figcaption><span>15 / 24</span>霍普杯竞赛 · 方案 06</figcaption>
+      </figure>
+      <figure class="portfolio-slide" data-carousel-slide data-caption="校园景观设计 · 方案 01" aria-hidden="true">
+        <img src="assets/portfolio/17景观设计-01.jpg" alt="校园景观休息廊设计方案第一页" loading="lazy" decoding="async">
+        <figcaption><span>16 / 24</span>校园景观设计 · 方案 01</figcaption>
+      </figure>
+      <figure class="portfolio-slide" data-carousel-slide data-caption="校园景观设计 · 方案 02" aria-hidden="true">
+        <img src="assets/portfolio/18景观设计.jpg" alt="校园景观休息廊设计方案第二页" loading="lazy" decoding="async">
+        <figcaption><span>17 / 24</span>校园景观设计 · 方案 02</figcaption>
+      </figure>
+      <figure class="portfolio-slide" data-carousel-slide data-caption="校园景观设计 · 方案 03" aria-hidden="true">
+        <img src="assets/portfolio/19景观设计.jpg" alt="校园景观休息廊设计方案第三页" loading="lazy" decoding="async">
+        <figcaption><span>18 / 24</span>校园景观设计 · 方案 03</figcaption>
+      </figure>
+      <figure class="portfolio-slide" data-carousel-slide data-caption="手绘与造型练习 · 01" aria-hidden="true">
+        <img src="assets/portfolio/20手绘作品-01.jpg" alt="静物手绘与造型练习作品一" loading="lazy" decoding="async">
+        <figcaption><span>19 / 24</span>手绘与造型练习 · 01</figcaption>
+      </figure>
+      <figure class="portfolio-slide" data-carousel-slide data-caption="手绘与造型练习 · 02" aria-hidden="true">
+        <img src="assets/portfolio/21手绘作品-01.jpg" alt="静物手绘与造型练习作品二" loading="lazy" decoding="async">
+        <figcaption><span>20 / 24</span>手绘与造型练习 · 02</figcaption>
+      </figure>
+      <figure class="portfolio-slide" data-carousel-slide data-caption="手绘与造型练习 · 03" aria-hidden="true">
+        <img src="assets/portfolio/22手绘作品-01.jpg" alt="静物手绘与造型练习作品三" loading="lazy" decoding="async">
+        <figcaption><span>21 / 24</span>手绘与造型练习 · 03</figcaption>
+      </figure>
+      <figure class="portfolio-slide" data-carousel-slide data-caption="手绘与造型练习 · 04" aria-hidden="true">
+        <img src="assets/portfolio/23手绘作品-01.jpg" alt="静物手绘与造型练习作品四" loading="lazy" decoding="async">
+        <figcaption><span>22 / 24</span>手绘与造型练习 · 04</figcaption>
+      </figure>
+      <figure class="portfolio-slide" data-carousel-slide data-caption="手绘与造型练习 · 05" aria-hidden="true">
+        <img src="assets/portfolio/24手绘作品-01.jpg" alt="静物手绘与造型练习作品五" loading="lazy" decoding="async">
+        <figcaption><span>23 / 24</span>手绘与造型练习 · 05</figcaption>
+      </figure>
+      <figure class="portfolio-slide" data-carousel-slide data-caption="手绘与造型练习 · 06" aria-hidden="true">
+        <img src="assets/portfolio/25手绘作品-01.jpg" alt="静物手绘与造型练习作品六" loading="lazy" decoding="async">
+        <figcaption><span>24 / 24</span>手绘与造型练习 · 06</figcaption>
+      </figure>
+    </div>
+    <button class="portfolio-carousel__button portfolio-carousel__button--prev" type="button" data-carousel-prev aria-label="上一张作品">‹</button>
+    <button class="portfolio-carousel__button portfolio-carousel__button--next" type="button" data-carousel-next aria-label="下一张作品">›</button>
+  </div>
+  <div class="portfolio-carousel__footer">
+    <div class="portfolio-carousel__dots" data-carousel-dots aria-label="选择作品"></div>
+    <div class="portfolio-carousel__status" aria-live="polite">
+      <strong data-carousel-counter>01 / 24</strong>
+      <span data-carousel-caption>作品集目录</span>
+    </div>
+  </div>
+  <p class="portfolio-carousel__hint">↔ 滑动浏览 · 使用方向键切换 · 悬停时暂停自动播放</p>
+</div>
+
+</section>
+
 <section class="home-section" markdown>
 
 <div class="home-section__heading" markdown>
