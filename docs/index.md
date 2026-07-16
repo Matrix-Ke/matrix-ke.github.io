@@ -161,7 +161,7 @@ hide:
 
 </section>
 
-<section class="home-section home-page" markdown>
+<section id="notes" class="home-section home-page" markdown>
 
 <div class="home-section__heading" markdown>
 
@@ -261,7 +261,7 @@ CMU 与 Stanford 图形学课程的学习记录与知识串联。
 
 </section>
 
-<section class="home-section home-profile home-page" markdown>
+<section id="focus" class="home-section home-profile home-page" markdown>
 
 <div class="home-section__heading" markdown>
 
@@ -284,7 +284,7 @@ CMU 与 Stanford 图形学课程的学习记录与知识串联。
 
 </section>
 
-<section class="home-cta home-page" markdown>
+<section id="source" class="home-cta home-page" markdown>
 
 <div markdown>
 
@@ -297,3 +297,28 @@ CMU 与 Stanford 图形学课程的学习记录与知识串联。
 [查看源代码 :material-open-in-new:](https://github.com/Matrix-Ke/matrix-ke.github.io){ .md-button }
 
 </section>
+
+<nav class="line-sidebar home-line-sidebar line-sidebar--markers line-sidebar--scale-tick" data-line-sidebar aria-label="首页章节导航">
+  <ul class="line-sidebar__list" data-line-sidebar-list>
+    <li class="line-sidebar__item" data-line-sidebar-item data-target="matrix-world" aria-current="true">
+      <span class="line-sidebar__marker" aria-hidden="true"></span>
+      <a class="line-sidebar__label" href="#matrix-world"><span class="line-sidebar__index">01</span><span class="line-sidebar__text">Overview</span></a>
+    </li>
+    <li class="line-sidebar__item" data-line-sidebar-item data-target="portfolio">
+      <span class="line-sidebar__marker" aria-hidden="true"></span>
+      <a class="line-sidebar__label" href="#portfolio"><span class="line-sidebar__index">02</span><span class="line-sidebar__text">Protfolio</span></a>
+    </li>
+    <li class="line-sidebar__item" data-line-sidebar-item data-target="notes">
+      <span class="line-sidebar__marker" aria-hidden="true"></span>
+      <a class="line-sidebar__label" href="#notes"><span class="line-sidebar__index">03</span><span class="line-sidebar__text">Notes</span></a>
+    </li>
+    <li class="line-sidebar__item" data-line-sidebar-item data-target="focus">
+      <span class="line-sidebar__marker" aria-hidden="true"></span>
+      <a class="line-sidebar__label" href="#focus"><span class="line-sidebar__index">04</span><span class="line-sidebar__text">Focus</span></a>
+    </li>
+    <li class="line-sidebar__item" data-line-sidebar-item data-target="source">
+      <span class="line-sidebar__marker" aria-hidden="true"></span>
+      <a class="line-sidebar__label" href="#source"><span class="line-sidebar__index">05</span><span class="line-sidebar__text">Source</span></a>
+    </li>
+  </ul>
+</nav>
