@@ -44,7 +44,7 @@ hide:
 <section class="home-section portfolio-section">
 
 <div class="home-section__heading">
-  <h2 id="portfolio">Portfolio · 作品集</h2>
+  <h2 id="portfolio">Protfolio</h2>
   <p>从参数化建筑、空间设计到景观与手绘练习。可使用左右按钮、圆点或触摸滑动浏览全部作品。</p>
 </div>
 
@@ -177,85 +177,85 @@ hide:
 
 <div class="home-card" markdown>
 
-<span class="home-card__icon">:material-ray-start-arrow:</span>
+<span class="home-card__icon" aria-hidden="true">◈</span>
 
 ### PBRT 与光线传输
 
 反射模型、光源、采样策略，以及基于物理的渲染框架。
 
-[进入专题 :material-arrow-right:](notes/PBRT/index.md){ .home-card__link }
+[进入专题](notes/PBRT/index.md){ .home-card__link }
 
 </div>
 
 <div class="home-card" markdown>
 
-<span class="home-card__icon">:material-weather-sunny:</span>
+<span class="home-card__icon" aria-hidden="true">✦</span>
 
 ### 实时渲染
 
 全局光照、IBL、球谐函数与现代实时渲染技术。
 
-[进入专题 :material-arrow-right:](notes/RTR/index.md){ .home-card__link }
+[进入专题](notes/RTR/index.md){ .home-card__link }
 
 </div>
 
 <div class="home-card" markdown>
 
-<span class="home-card__icon">:material-function-variant:</span>
+<span class="home-card__icon" aria-hidden="true">∑</span>
 
 ### 图形学数学
 
 变换、旋转、傅里叶分析、最小二乘与动力学基础。
 
-[进入专题 :material-arrow-right:](notes/Math/index.md){ .home-card__link }
+[进入专题](notes/Math/index.md){ .home-card__link }
 
 </div>
 
 <div class="home-card" markdown>
 
-<span class="home-card__icon">:material-gamepad-variant-outline:</span>
+<span class="home-card__icon home-card__icon--text" aria-hidden="true">UE</span>
 
 ### Unreal Engine
 
 渲染管线、RHI、Shader、RDG 与并行渲染架构。
 
-[进入专题 :material-arrow-right:](notes/UE4/index.md){ .home-card__link }
+[进入专题](notes/UE4/index.md){ .home-card__link }
 
 </div>
 
 <div class="home-card" markdown>
 
-<span class="home-card__icon">:material-human-handsup:</span>
+<span class="home-card__icon" aria-hidden="true">◇</span>
 
 ### 动画
 
 蒙皮、逆运动学与计算机动画课程学习笔记。
 
-[进入专题 :material-arrow-right:](notes/Animation/index.md){ .home-card__link }
+[进入专题](notes/Animation/index.md){ .home-card__link }
 
 </div>
 
 <div class="home-card" markdown>
 
-<span class="home-card__icon">:material-chart-bubble:</span>
+<span class="home-card__icon" aria-hidden="true">≈</span>
 
 ### 物理模拟
 
 布料、刚体、有限元、碰撞检测与数值优化。
 
-[进入专题 :material-arrow-right:](notes/Simulation/index.md){ .home-card__link }
+[进入专题](notes/Simulation/index.md){ .home-card__link }
 
 </div>
 
 <div class="home-card home-card--wide" markdown>
 
-<span class="home-card__icon">:material-school-outline:</span>
+<span class="home-card__icon" aria-hidden="true">▤</span>
 
 ### 课程笔记
 
 CMU 与 Stanford 图形学课程的学习记录与知识串联。
 
-[进入专题 :material-arrow-right:](notes/Courses/index.md){ .home-card__link }
+[进入专题](notes/Courses/index.md){ .home-card__link }
 
 </div>
 
