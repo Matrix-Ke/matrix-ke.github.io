@@ -133,7 +133,7 @@ input {
   background: #070b16;
 }
 
-.home-page {
+.home-hero.home-page {
   margin-top: -0.8rem;
 }
 
@@ -444,28 +444,11 @@ input {
 }
 
 .portfolio-slide figcaption {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  display: flex;
-  align-items: center;
-  gap: 0.7rem;
-  margin: 0;
-  padding: 2.6rem 1.2rem 0.85rem;
-  background: linear-gradient(transparent, rgba(3, 7, 18, 0.82));
-  color: #f8fafc;
-  font-size: 0.7rem;
-  font-weight: 680;
-  letter-spacing: 0.01em;
-  pointer-events: none;
+  display: none;
 }
 
 .portfolio-slide figcaption span {
-  color: #67e8f9;
-  font-size: 0.56rem;
-  font-weight: 760;
-  letter-spacing: 0.09em;
+  display: none;
 }
 
 .portfolio-carousel__button {
@@ -1015,11 +998,6 @@ input {
   .portfolio-carousel__viewport {
     aspect-ratio: 4 / 3;
     border-radius: 0.68rem;
-  }
-
-  .portfolio-slide figcaption {
-    padding: 2.1rem 0.75rem 0.55rem;
-    font-size: 0.58rem;
   }
 
   .portfolio-carousel__button {

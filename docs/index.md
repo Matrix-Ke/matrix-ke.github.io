@@ -4,9 +4,7 @@ hide:
   - toc
 ---
 
-<div class="home-page" markdown>
-
-<section class="home-hero" markdown>
+<section class="home-hero home-page" markdown>
 
 <div class="home-hero__content" markdown>
 
@@ -41,7 +39,7 @@ hide:
 
 </section>
 
-<section class="home-section portfolio-section">
+<section class="home-section portfolio-section home-page">
 
 <div class="home-section__heading">
   <h2 id="portfolio">Protfolio</h2>
@@ -163,7 +161,7 @@ hide:
 
 </section>
 
-<section class="home-section" markdown>
+<section class="home-section home-page" markdown>
 
 <div class="home-section__heading" markdown>
 
@@ -263,7 +261,7 @@ CMU 与 Stanford 图形学课程的学习记录与知识串联。
 
 </section>
 
-<section class="home-section home-profile" markdown>
+<section class="home-section home-profile home-page" markdown>
 
 <div class="home-section__heading" markdown>
 
@@ -286,7 +284,7 @@ CMU 与 Stanford 图形学课程的学习记录与知识串联。
 
 </section>
 
-<section class="home-cta" markdown>
+<section class="home-cta home-page" markdown>
 
 <div markdown>
 
@@ -299,5 +297,3 @@ CMU 与 Stanford 图形学课程的学习记录与知识串联。
 [查看源代码 :material-open-in-new:](https://github.com/Matrix-Ke/matrix-ke.github.io){ .md-button }
 
 </section>
-
-</div>
