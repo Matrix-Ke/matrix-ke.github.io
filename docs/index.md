@@ -28,13 +28,24 @@ hide:
 
 </div>
 
-<div class="home-hero__visual" aria-hidden="true">
-  <div class="home-orbit home-orbit--outer"></div>
-  <div class="home-orbit home-orbit--inner"></div>
-  <div class="home-hero__monogram">MK</div>
-  <i class="home-node home-node--one"></i>
-  <i class="home-node home-node--two"></i>
-  <i class="home-node home-node--three"></i>
+<div class="home-hero__visual robot-stage" role="img" aria-label="MK-01 机器人结构循环组装与拆解动画">
+  <div class="robot-scan" aria-hidden="true"></div>
+  <div class="robot-part robot-head" aria-hidden="true"><i></i><span></span></div>
+  <div class="robot-part robot-chest" aria-hidden="true"><b>MK</b><i></i></div>
+  <div class="robot-part robot-pelvis" aria-hidden="true"></div>
+  <div class="robot-part robot-arm robot-arm--left" aria-hidden="true"></div>
+  <div class="robot-part robot-arm robot-arm--right" aria-hidden="true"></div>
+  <div class="robot-part robot-forearm robot-forearm--left" aria-hidden="true"></div>
+  <div class="robot-part robot-forearm robot-forearm--right" aria-hidden="true"></div>
+  <div class="robot-part robot-hand robot-hand--left" aria-hidden="true"></div>
+  <div class="robot-part robot-hand robot-hand--right" aria-hidden="true"></div>
+  <div class="robot-part robot-thigh robot-thigh--left" aria-hidden="true"></div>
+  <div class="robot-part robot-thigh robot-thigh--right" aria-hidden="true"></div>
+  <div class="robot-part robot-shin robot-shin--left" aria-hidden="true"></div>
+  <div class="robot-part robot-shin robot-shin--right" aria-hidden="true"></div>
+  <div class="robot-part robot-foot robot-foot--left" aria-hidden="true"></div>
+  <div class="robot-part robot-foot robot-foot--right" aria-hidden="true"></div>
+  <div class="robot-status" aria-hidden="true"><strong>MK-01</strong><span>ASSEMBLY / EXPLODED VIEW</span></div>
 </div>
 
 </section>
@@ -297,28 +308,3 @@ CMU 与 Stanford 图形学课程的学习记录与知识串联。
 [查看源代码 :material-open-in-new:](https://github.com/Matrix-Ke/matrix-ke.github.io){ .md-button }
 
 </section>
-
-<nav class="line-sidebar home-line-sidebar line-sidebar--markers line-sidebar--scale-tick" data-line-sidebar aria-label="首页章节导航">
-  <ul class="line-sidebar__list" data-line-sidebar-list>
-    <li class="line-sidebar__item" data-line-sidebar-item data-target="matrix-world" aria-current="true">
-      <span class="line-sidebar__marker" aria-hidden="true"></span>
-      <a class="line-sidebar__label" href="#matrix-world"><span class="line-sidebar__index">01</span><span class="line-sidebar__text">Overview</span></a>
-    </li>
-    <li class="line-sidebar__item" data-line-sidebar-item data-target="portfolio">
-      <span class="line-sidebar__marker" aria-hidden="true"></span>
-      <a class="line-sidebar__label" href="#portfolio"><span class="line-sidebar__index">02</span><span class="line-sidebar__text">Protfolio</span></a>
-    </li>
-    <li class="line-sidebar__item" data-line-sidebar-item data-target="notes">
-      <span class="line-sidebar__marker" aria-hidden="true"></span>
-      <a class="line-sidebar__label" href="#notes"><span class="line-sidebar__index">03</span><span class="line-sidebar__text">Notes</span></a>
-    </li>
-    <li class="line-sidebar__item" data-line-sidebar-item data-target="focus">
-      <span class="line-sidebar__marker" aria-hidden="true"></span>
-      <a class="line-sidebar__label" href="#focus"><span class="line-sidebar__index">04</span><span class="line-sidebar__text">Focus</span></a>
-    </li>
-    <li class="line-sidebar__item" data-line-sidebar-item data-target="source">
-      <span class="line-sidebar__marker" aria-hidden="true"></span>
-      <a class="line-sidebar__label" href="#source"><span class="line-sidebar__index">05</span><span class="line-sidebar__text">Source</span></a>
-    </li>
-  </ul>
-</nav>

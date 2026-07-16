@@ -1,39 +1,72 @@
 (function () {
   "use strict";
 
-  const curves = {
-    linear: (p) => p,
-    smooth: (p) => p * p * (3 - 2 * p),
-    sharp: (p) => p * p * p,
-  };
+  const smooth = (p) => p * p * (3 - 2 * p);
 
-  function initLineSidebar(root) {
-    if (root.dataset.lineSidebarReady === "true") return;
+  function directControls(item) {
+    const controls = [];
+    Array.from(item.children).forEach((child) => {
+      if (child.matches("a.md-nav__link, label.md-nav__link")) controls.push(child);
+      if (child.matches(".md-nav__container")) {
+        const link = child.querySelector("a.md-nav__link");
+        if (link) controls.push(link);
+      }
+    });
+    return controls;
+  }
 
-    const list = root.querySelector("[data-line-sidebar-list]");
-    const items = Array.from(root.querySelectorAll("[data-line-sidebar-item]"));
-    if (!list || !items.length) return;
+  function initLineNavigation() {
+    const list = document.querySelector("nav.md-nav--primary > ul.md-nav__list");
+    if (!list || list.dataset.lineSidebarReady === "true") return;
 
-    root.dataset.lineSidebarReady = "true";
+    const items = Array.from(list.children).filter((item) => item.matches("li.md-nav__item"));
+    if (!items.length) return;
 
-    const proximityRadius = 100;
-    const smoothing = 100;
-    const falloff = curves.smooth;
-    const targets = items.map(() => 0);
-    const current = items.map(() => 0);
+    list.dataset.lineSidebarReady = "true";
+    list.classList.add("line-sidebar__list");
+
+    const entries = items.map((item, index) => {
+      const controls = directControls(item);
+      item.classList.add("line-sidebar__item");
+
+      const marker = document.createElement("span");
+      marker.className = "line-sidebar__marker";
+      marker.setAttribute("aria-hidden", "true");
+      item.insertBefore(marker, item.firstChild);
+
+      controls.forEach((control) => {
+        control.classList.add("line-sidebar__label");
+        const ellipsis = control.querySelector(".md-ellipsis");
+        if (ellipsis && !ellipsis.querySelector(".line-sidebar__index")) {
+          const number = document.createElement("span");
+          number.className = "line-sidebar__index";
+          number.setAttribute("aria-hidden", "true");
+          number.textContent = String(index + 1).padStart(2, "0");
+          ellipsis.insertBefore(number, ellipsis.firstChild);
+        }
+      });
+
+      return { item, controls };
+    });
+
+    const targets = entries.map(() => 0);
+    const current = entries.map(() => 0);
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-    let activeIndex = 0;
+    const activeIndex = Math.max(0, entries.findIndex(({ item }) => item.classList.contains("md-nav__item--active")));
     let frame = null;
     let lastTime = 0;
+
+    function visibleControl(entry) {
+      return entry.controls.find((control) => control.getClientRects().length) || entry.controls[0];
+    }
 
     function render(now) {
       const dt = Math.min((now - lastTime) / 1000, 0.05);
       lastTime = now;
-      const tau = Math.max(smoothing, 1) / 1000;
-      const easing = reduceMotion.matches ? 1 : 1 - Math.exp(-dt / tau);
+      const easing = reduceMotion.matches ? 1 : 1 - Math.exp(-dt / 0.1);
       let moving = false;
 
-      items.forEach((item, index) => {
+      entries.forEach(({ item }, index) => {
         const target = Math.max(targets[index], activeIndex === index ? 1 : 0);
         const next = current[index] + (target - current[index]) * easing;
         const settled = Math.abs(target - next) < 0.0015;
@@ -51,24 +84,13 @@
       frame = requestAnimationFrame(render);
     }
 
-    function setActive(index) {
-      if (index < 0 || index >= items.length || index === activeIndex) return;
-      activeIndex = index;
-      items.forEach((item, itemIndex) => {
-        if (itemIndex === activeIndex) item.setAttribute("aria-current", "true");
-        else item.removeAttribute("aria-current");
-      });
-      start();
-    }
-
     list.addEventListener("pointermove", (event) => {
-      const bounds = list.getBoundingClientRect();
-      const pointerY = event.clientY - bounds.top;
-
-      items.forEach((item, index) => {
-        const center = item.offsetTop + item.offsetHeight / 2;
-        const distance = Math.abs(pointerY - center);
-        targets[index] = falloff(Math.max(0, 1 - distance / proximityRadius));
+      entries.forEach((entry, index) => {
+        const control = visibleControl(entry);
+        if (!control) return;
+        const rect = control.getBoundingClientRect();
+        const distance = Math.abs(event.clientY - (rect.top + rect.height / 2));
+        targets[index] = smooth(Math.max(0, 1 - distance / 100));
       });
       start();
     });
@@ -78,46 +100,22 @@
       start();
     });
 
-    items.forEach((item, index) => {
-      const link = item.querySelector("a");
-      if (!link) return;
-      link.addEventListener("click", () => setActive(index));
-      link.addEventListener("focus", () => {
-        targets[index] = 1;
-        start();
-      });
-      link.addEventListener("blur", () => {
-        targets[index] = 0;
-        start();
+    entries.forEach((entry, index) => {
+      entry.controls.forEach((control) => {
+        control.addEventListener("focus", () => {
+          targets[index] = 1;
+          start();
+        });
+        control.addEventListener("blur", () => {
+          targets[index] = 0;
+          start();
+        });
       });
     });
-
-    const observed = items
-      .map((item, index) => ({ item, index, target: document.getElementById(item.dataset.target) }))
-      .filter((entry) => entry.target);
-
-    if ("IntersectionObserver" in window) {
-      const observer = new IntersectionObserver(
-        (entries) => {
-          const visible = entries
-            .filter((entry) => entry.isIntersecting)
-            .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-          if (!visible) return;
-          const match = observed.find((entry) => entry.target === visible.target);
-          if (match) setActive(match.index);
-        },
-        { rootMargin: "-18% 0px -58% 0px", threshold: [0, 0.15, 0.35, 0.6] }
-      );
-      observed.forEach((entry) => observer.observe(entry.target));
-    }
 
     start();
   }
 
-  function init() {
-    document.querySelectorAll("[data-line-sidebar]").forEach(initLineSidebar);
-  }
-
-  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
-  else init();
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", initLineNavigation);
+  else initLineNavigation();
 })();
