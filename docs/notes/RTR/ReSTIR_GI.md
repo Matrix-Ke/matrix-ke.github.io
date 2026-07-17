@@ -1,1 +1,0 @@
-# ReSTIR GI

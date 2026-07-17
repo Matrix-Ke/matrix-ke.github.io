@@ -1,3 +1,0 @@
-# lightSpaceMatrix推导
-
-## 

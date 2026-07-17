@@ -16,7 +16,7 @@ hide:
 
 <div class="home-hero__actions" markdown>
 
-[开始阅读](notes/PBRT/index.md){ .md-button .md-button--primary }
+[开始阅读](PBRT/index.md){ .md-button .md-button--primary }
 [GitHub :fontawesome-brands-github:](https://github.com/Matrix-Ke){ .md-button }
 [关于我](about.md){ .home-text-link }
 
@@ -45,7 +45,129 @@ hide:
   <div class="robot-part robot-shin robot-shin--right" aria-hidden="true"></div>
   <div class="robot-part robot-foot robot-foot--left" aria-hidden="true"></div>
   <div class="robot-part robot-foot robot-foot--right" aria-hidden="true"></div>
-  <div class="robot-status" aria-hidden="true"><strong>MK-01</strong><span>ASSEMBLY / EXPLODED VIEW</span></div>
+</div>
+
+</section>
+
+<section id="notes" class="home-section home-page" markdown>
+
+<div class="home-section__heading" markdown>
+
+## 探索知识地图
+
+从渲染理论、数学基础到引擎实践，按主题进入我的长期学习记录。
+
+</div>
+
+<div class="home-grid" markdown>
+
+<div class="home-card" markdown>
+
+<span class="home-card__icon" aria-hidden="true">◈</span>
+
+### PBRT 与光线传输
+
+反射模型、光源、采样策略，以及基于物理的渲染框架。
+
+[进入专题](PBRT/index.md){ .home-card__link }
+
+</div>
+
+<div class="home-card" markdown>
+
+<span class="home-card__icon" aria-hidden="true">✦</span>
+
+### 实时渲染
+
+全局光照、IBL、球谐函数与现代实时渲染技术。
+
+[进入专题](RTR/index.md){ .home-card__link }
+
+</div>
+
+<div class="home-card" markdown>
+
+<span class="home-card__icon" aria-hidden="true">∑</span>
+
+### 图形学数学
+
+变换、旋转、傅里叶分析、最小二乘与动力学基础。
+
+[进入专题](Math/index.md){ .home-card__link }
+
+</div>
+
+<div class="home-card" markdown>
+
+<span class="home-card__icon home-card__icon--text" aria-hidden="true">UE</span>
+
+### Unreal Engine
+
+渲染管线、RHI、Shader、RDG 与并行渲染架构。
+
+[进入专题](UE4/index.md){ .home-card__link }
+
+</div>
+
+<div class="home-card" markdown>
+
+<span class="home-card__icon" aria-hidden="true">◇</span>
+
+### 动画
+
+蒙皮、逆运动学与计算机动画课程学习笔记。
+
+[进入专题](Animation/index.md){ .home-card__link }
+
+</div>
+
+<div class="home-card" markdown>
+
+<span class="home-card__icon" aria-hidden="true">≈</span>
+
+### 物理模拟
+
+布料、刚体、有限元、碰撞检测与数值优化。
+
+[进入专题](Simulation/index.md){ .home-card__link }
+
+</div>
+
+<div class="home-card home-card--wide" markdown>
+
+<span class="home-card__icon" aria-hidden="true">▤</span>
+
+### 课程笔记
+
+CMU 与 Stanford 图形学课程的学习记录与知识串联。
+
+[进入专题](Courses/index.md){ .home-card__link }
+
+</div>
+
+</div>
+
+</section>
+
+<section id="focus" class="home-section home-profile home-page" markdown>
+
+<div class="home-section__heading" markdown>
+
+## 关注方向
+
+围绕图形学中的光、几何、运动与计算，持续建立自己的知识脉络。
+
+</div>
+
+<div class="home-focus-grid">
+  <div><strong>01</strong><span>Graphics</span><small>图形学数学与几何基础</small></div>
+  <div><strong>02</strong><span>Rendering</span><small>离线与实时渲染方法</small></div>
+  <div><strong>03</strong><span>Simulation</span><small>刚体、布料与有限元</small></div>
+  <div><strong>04</strong><span>Animation</span><small>角色动画与运动学</small></div>
+</div>
+
+<div class="home-skills" aria-label="技能关键词">
+  <span>C++</span><span>Unreal Engine</span><span>PBRT</span><span>Monte Carlo</span><span>Shader</span><span>Math</span>
 </div>
 
 </section>
@@ -168,129 +290,6 @@ hide:
     </div>
   </div>
   <p class="portfolio-carousel__hint">↔ 滑动浏览 · 使用方向键切换 · 悬停时暂停自动播放</p>
-</div>
-
-</section>
-
-<section id="notes" class="home-section home-page" markdown>
-
-<div class="home-section__heading" markdown>
-
-## 探索知识地图
-
-从渲染理论、数学基础到引擎实践，按主题进入我的长期学习记录。
-
-</div>
-
-<div class="home-grid" markdown>
-
-<div class="home-card" markdown>
-
-<span class="home-card__icon" aria-hidden="true">◈</span>
-
-### PBRT 与光线传输
-
-反射模型、光源、采样策略，以及基于物理的渲染框架。
-
-[进入专题](notes/PBRT/index.md){ .home-card__link }
-
-</div>
-
-<div class="home-card" markdown>
-
-<span class="home-card__icon" aria-hidden="true">✦</span>
-
-### 实时渲染
-
-全局光照、IBL、球谐函数与现代实时渲染技术。
-
-[进入专题](notes/RTR/index.md){ .home-card__link }
-
-</div>
-
-<div class="home-card" markdown>
-
-<span class="home-card__icon" aria-hidden="true">∑</span>
-
-### 图形学数学
-
-变换、旋转、傅里叶分析、最小二乘与动力学基础。
-
-[进入专题](notes/Math/index.md){ .home-card__link }
-
-</div>
-
-<div class="home-card" markdown>
-
-<span class="home-card__icon home-card__icon--text" aria-hidden="true">UE</span>
-
-### Unreal Engine
-
-渲染管线、RHI、Shader、RDG 与并行渲染架构。
-
-[进入专题](notes/UE4/index.md){ .home-card__link }
-
-</div>
-
-<div class="home-card" markdown>
-
-<span class="home-card__icon" aria-hidden="true">◇</span>
-
-### 动画
-
-蒙皮、逆运动学与计算机动画课程学习笔记。
-
-[进入专题](notes/Animation/index.md){ .home-card__link }
-
-</div>
-
-<div class="home-card" markdown>
-
-<span class="home-card__icon" aria-hidden="true">≈</span>
-
-### 物理模拟
-
-布料、刚体、有限元、碰撞检测与数值优化。
-
-[进入专题](notes/Simulation/index.md){ .home-card__link }
-
-</div>
-
-<div class="home-card home-card--wide" markdown>
-
-<span class="home-card__icon" aria-hidden="true">▤</span>
-
-### 课程笔记
-
-CMU 与 Stanford 图形学课程的学习记录与知识串联。
-
-[进入专题](notes/Courses/index.md){ .home-card__link }
-
-</div>
-
-</div>
-
-</section>
-
-<section id="focus" class="home-section home-profile home-page" markdown>
-
-<div class="home-section__heading" markdown>
-
-## 关注方向
-
-围绕图形学中的光、几何、运动与计算，持续建立自己的知识脉络。
-
-</div>
-
-<div class="home-focus-grid">
-  <div><strong>01</strong><span>Graphics</span><small>图形学数学与几何基础</small></div>
-  <div><strong>02</strong><span>Rendering</span><small>离线与实时渲染方法</small></div>
-  <div><strong>03</strong><span>Simulation</span><small>刚体、布料与有限元</small></div>
-  <div><strong>04</strong><span>Animation</span><small>角色动画与运动学</small></div>
-</div>
-
-<div class="home-skills" aria-label="技能关键词">
-  <span>C++</span><span>Unreal Engine</span><span>PBRT</span><span>Monte Carlo</span><span>Shader</span><span>Math</span>
 </div>
 
 </section>
