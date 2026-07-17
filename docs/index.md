@@ -12,7 +12,7 @@ hide:
 
 # Matrix World { .home-hero__title }
 
-专注计算机图形学、物理渲染与实时渲染。这里记录从数学推导到工程实现的学习过程，也保存那些值得反复查阅的技术细节。
+在真实与虚拟的边界上，持续探索那些尚未被定义的世界。。。
 
 <div class="home-hero__actions" markdown>
 
