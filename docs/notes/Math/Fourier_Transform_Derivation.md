@@ -1,4 +1,4 @@
-# 傅里叶变换推导 Fourier Transform Derivation
+# 傅里叶变换推导
 
 **Prerequisite**
 

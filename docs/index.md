@@ -54,7 +54,7 @@ hide:
 
 <div class="home-section__heading">
   <h2 id="portfolio">Protfolio</h2>
-  <p>从参数化建筑、空间设计到景观与手绘练习。可使用左右按钮、圆点或触摸滑动浏览全部作品。</p>
+  <p>个人本科设计作品集，可使用左右按钮、圆点或触摸滑动浏览全部作品。</p>
 </div>
 
 <div class="portfolio-carousel" data-carousel aria-label="Matrix-Ke 个人作品集" aria-roledescription="carousel">
