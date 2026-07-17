@@ -153,17 +153,17 @@ CMU 与 Stanford 图形学课程的学习记录与知识串联。
 
 <div class="home-section__heading" markdown>
 
-## 关注方向
+## 项目展示 { #projects }
 
-围绕图形学中的光、几何、运动与计算，持续建立自己的知识脉络。
+具体项目内容正在持续整理中。以下入口已预留，后续会逐步补充作品说明、技术细节与演示内容。
 
 </div>
 
 <div class="home-focus-grid">
-  <div><strong>01</strong><span>Graphics</span><small>图形学数学与几何基础</small></div>
-  <div><strong>02</strong><span>Rendering</span><small>离线与实时渲染方法</small></div>
-  <div><strong>03</strong><span>Simulation</span><small>刚体、布料与有限元</small></div>
-  <div><strong>04</strong><span>Animation</span><small>角色动画与运动学</small></div>
+  <div id="project-graphics"><a href="#project-graphics" title="项目内容正在整理中" aria-label="Graphics 项目，内容正在整理中"><strong>01</strong><span>Graphics</span><small>图形学数学与几何基础</small></a></div>
+  <div id="project-rendering"><a href="#project-rendering" title="项目内容正在整理中" aria-label="Rendering 项目，内容正在整理中"><strong>02</strong><span>Rendering</span><small>离线与实时渲染方法</small></a></div>
+  <div id="project-simulation"><a href="#project-simulation" title="项目内容正在整理中" aria-label="Simulation 项目，内容正在整理中"><strong>03</strong><span>Simulation</span><small>刚体、布料与有限元</small></a></div>
+  <div id="project-animation"><a href="#project-animation" title="项目内容正在整理中" aria-label="Animation 项目，内容正在整理中"><strong>04</strong><span>Animation</span><small>角色动画与运动学</small></a></div>
 </div>
 
 <div class="home-skills" aria-label="技能关键词">
