@@ -172,6 +172,55 @@ CMU 与 Stanford 图形学课程的学习记录与知识串联。
 
 </section>
 
+<section id="videos" class="home-section video-showcase home-page" markdown>
+
+<div class="home-section__heading" markdown>
+
+## 视频作品
+
+三个来自 Bilibili 的实时渲染与布料模拟实验。视频内容持续整理中，点击播放器或标题即可前往 B 站观看。
+
+</div>
+
+<div class="video-grid" markdown>
+
+<article class="video-card" markdown>
+  <div class="video-card__body">
+    <span class="video-card__index">01 · BILIBILI</span>
+    <h3>ue5实时布料模拟</h3>
+    <a href="https://www.bilibili.com/video/BV1fs4y1q71x/" target="_blank" rel="noopener">在 B 站观看 <span aria-hidden="true">↗</span></a>
+  </div>
+  <div class="video-card__embed">
+    <iframe src="https://player.bilibili.com/player.html?bvid=BV1fs4y1q71x&amp;page=1" title="ue5实时布料模拟" loading="lazy" scrolling="no" frameborder="0" allowfullscreen="true"></iframe>
+  </div>
+</article>
+
+<article class="video-card" markdown>
+  <div class="video-card__body">
+    <span class="video-card__index">02 · BILIBILI</span>
+    <h3>ue4 绘制人物半透勾边</h3>
+    <a href="https://www.bilibili.com/video/BV1k8411J7rr/" target="_blank" rel="noopener">在 B 站观看 <span aria-hidden="true">↗</span></a>
+  </div>
+  <div class="video-card__embed">
+    <iframe src="https://player.bilibili.com/player.html?bvid=BV1k8411J7rr&amp;page=1" title="ue4 绘制人物半透勾边" loading="lazy" scrolling="no" frameborder="0" allowfullscreen="true"></iframe>
+  </div>
+</article>
+
+<article class="video-card" markdown>
+  <div class="video-card__body">
+    <span class="video-card__index">03 · BILIBILI</span>
+    <h3>UE5 Chaos Cloth 布料模拟</h3>
+    <a href="https://www.bilibili.com/video/BV1t44y1Q7GN/" target="_blank" rel="noopener">在 B 站观看 <span aria-hidden="true">↗</span></a>
+  </div>
+  <div class="video-card__embed">
+    <iframe src="https://player.bilibili.com/player.html?bvid=BV1t44y1Q7GN&amp;page=1" title="UE5 Chaos Cloth 布料模拟" loading="lazy" scrolling="no" frameborder="0" allowfullscreen="true"></iframe>
+  </div>
+</article>
+
+</div>
+
+</section>
+
 <section class="home-section portfolio-section home-page">
 
 <div class="home-section__heading">
