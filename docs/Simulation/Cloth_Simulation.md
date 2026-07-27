@@ -5,7 +5,7 @@
 #### 隐式布料求解器 
 
 **隐式求解效果：**
-![Implicit cloth simulation](https://raw.githubusercontent.com/Matrix-Ke/PhysicallyBasedRendering_Note/master/Physically_Simulation/Image/Cloth_Simulation_ImplicitMethod.gif)
+![Implicit cloth simulation](./Image/Cloth_Simulation_ImplicitMethod.gif)
 
 ##### 1. 初始设置：
 * 对于每个顶点，对速度应用阻尼：$\mathbf{v}_i *= damping$ 计算：$\hat{\mathbf{x}}_i=\mathbf{x}_i+\Delta t \mathbf{v}_i$。之后，将$\mathbf{x}_i$设置为其初始猜测：$\mathbf{x}_i=\hat{\mathbf{x}}_i$。 （注意$\mathbf{x}_i$是初步猜测，不是真正的更新。无论如何初始化$\mathbf{x}_i$，求解器都能正常工作，但是一个糟糕的初始猜测会使求解器花费更多的迭代来收敛。您可以尝试其他初始猜测以查看差异。例如，什么都不做。） 
@@ -41,7 +41,7 @@ $$
 #### PDB方法求解器
 
 **PDB实现效果**
-![PBD cloth simulation](https://raw.githubusercontent.com/Matrix-Ke/PhysicallyBasedRendering_Note/master/Physically_Simulation/Image/Cloth_Simulation_PDB.gif)
+![PBD cloth simulation](./Image/Cloth_Simulation_PDB.gif)
 ##### 1. 初始设置：
 * 在更新函数中，将PBD求解器设置为粒子系统。 具体来说，对于每个顶点应用阻尼速度$\mathbf{v}_i *= damping$，通过重力更新速度，最后更新位置：$\mathbf{x}_i \leftarrow \mathbf{x}_i+\Delta t \mathbf{v}_i$。
 

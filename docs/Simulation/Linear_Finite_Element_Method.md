@@ -337,7 +337,7 @@ $$
 
 
 **各种能量密度模型效果对比**
-![Elastic body simulation](https://raw.githubusercontent.com/Matrix-Ke/PhysicallyBasedRendering_Note/master/Physically_Simulation/Image/Elastic_Body_Simulation.gif)
+![Elastic body simulation](./Image/Elastic_Body_Simulation.gif)
 
 **A FEM/FVM Framework**
 ![](./Image/Iostropic_FEM_FVM_Framework.png)

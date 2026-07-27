@@ -244,7 +244,7 @@ $$
 ![](./image/SVD_Decomposition.png)
 
 动画展示过程：
-![SVD diagram](https://raw.githubusercontent.com/Matrix-Ke/PhysicallyBasedRendering_Note/master/Math/image/SVD_Diagram.gif)
+![SVD diagram](./image/SVD_Diagram.gif)
 * 可以用于图像压缩：
 ![](./image/SVD_Picture_Compression.png)
 ![](./image/SVD_Picture_Compression1.png)
