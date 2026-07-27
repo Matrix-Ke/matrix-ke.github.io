@@ -178,8 +178,6 @@ CMU 与 Stanford 图形学课程的学习记录与知识串联。
 
 ## 视频作品
 
-三个来自 Bilibili 的实时渲染与布料模拟实验。视频内容持续整理中，点击播放器或标题即可前往 B 站观看。
-
 </div>
 
 <div class="video-grid" markdown>
