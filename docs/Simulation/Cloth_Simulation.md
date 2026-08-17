@@ -28,11 +28,74 @@ $$
 $$
 这种方法的工作原理类似于牛顿法：首先计算梯度$\bf g$；然后通过方程式更新所有顶点。 3. 重复这个过程 32 次，使$\bf x$可以足够好。最后，计算速度$\mathbf{v} \leftarrow \mathbf{v}+\frac{1}{\Delta t}(\mathbf{x}-\tilde{\mathbf{x}})$并将$\bf x$分配给 mesh.vertices。 
 
-##### 4.Chebyshev 切比雪夫加速度(基于雅可比方法)
+##### 4. Jacobi 迭代矩阵为何是 I − αD⁻¹A
+
+Newton 线性化后需要求解：
+
+$$
+\mathbf A\mathbf z=\mathbf b.
+$$
+
+这里可以把未知量 $\mathbf z$ 理解为位置修正 $\Delta\mathbf x$。令 $\mathbf D=\operatorname{diag}(\mathbf A)$ 为 $\mathbf A$ 的对角部分。对当前猜测 $\mathbf z^{(k)}$，残差是：
+
+$$
+\mathbf r^{(k)}
+=\mathbf b-\mathbf A\mathbf z^{(k)}.
+$$
+
+Jacobi 方法只用容易求逆的对角矩阵 $\mathbf D$ 来近似完整的 $\mathbf A$，并用残差修正当前猜测：
+
+$$
+\mathbf z^{(k+1)}
+=\mathbf z^{(k)}
++\alpha\mathbf D^{-1}\mathbf r^{(k)}.
+$$
+
+代入残差并整理：
+
+$$
+\begin{aligned}
+\mathbf z^{(k+1)}
+&=\mathbf z^{(k)}
++\alpha\mathbf D^{-1}
+\left(\mathbf b-\mathbf A\mathbf z^{(k)}\right)\\
+&=\left(\mathbf I-\alpha\mathbf D^{-1}\mathbf A\right)
+\mathbf z^{(k)}
++\alpha\mathbf D^{-1}\mathbf b.
+\end{aligned}
+$$
+
+因此 Jacobi 的迭代矩阵为：
+
+$$
+\boxed{
+\mathbf T_{\mathrm{Jacobi}}
+=\mathbf I-\alpha\mathbf D^{-1}\mathbf A
+}.
+$$
+
+其中 $\mathbf I$ 保留旧猜测，$\alpha\mathbf D^{-1}(\mathbf b-\mathbf A\mathbf z^{(k)})$ 是本轮残差修正。$\alpha=1$ 时为标准 Jacobi；$\alpha\ne1$ 时为加权 Jacobi。
+
+若精确解为 $\mathbf z^*$，定义误差 $\mathbf e^{(k)}=\mathbf z^{(k)}-\mathbf z^*$，则：
+
+$$
+\mathbf e^{(k+1)}
+=\mathbf T_{\mathrm{Jacobi}}\mathbf e^{(k)}.
+$$
+
+所以迭代能否收敛取决于迭代矩阵是否持续缩小误差，常用条件是：
+
+$$
+\rho\left(\mathbf T_{\mathrm{Jacobi}}\right)<1,
+$$
+
+其中 $\rho$ 是谱半径。
+
+##### 5. Chebyshev 切比雪夫加速度（基于 Jacobi 方法）
 *  将Chebyshev 半迭代法用于非线性优化$\mathbf{A} \Delta \mathbf{x}=\mathbf{b}$。
 ![](./Image/Chebyshev_accleration.png)
 * $\rho(\rho<1)$是迭代矩阵的估计谱半径。
-##### 5. Sphere Collision
+##### 6. Sphere Collision
 * 在 Collision Handling 函数中，计算每个顶点到球体中心的距离，并用它来检测顶点是否发生碰撞。要获得球心 c. 
 $$
 \mathbf{v}_i \leftarrow \mathbf{v}_i+\frac{1}{\Delta t}\left(\mathbf{c}+r \frac{\mathbf{x}_i-\mathbf{c}}{\left\|\mathbf{x}_i-\mathbf{c}\right\|}-\mathbf{x}_i\right), \quad \mathbf{x}_i \leftarrow \mathbf{c}+r \frac{\mathbf{x}_i-\mathbf{c}}{\left\|\mathbf{x}_i-\mathbf{c}\right\|} \\
@@ -153,16 +216,39 @@ $$
 \mathbf{x}^{[1]}=\mathbf{x}^{[0]} + \Delta t \mathbf{v}^{[0]}+\Delta t^2 \mathbf{M}^{-1} \mathbf{f}\left(\mathbf{x}^{[1]}\right)\\
 $$
 
-#### 将求解隐私积分问题转化成求解优化问题
-* 由能量守恒，可以将上述等式，对力$\mathbf{f}\left(\mathbf{x}^{[1]}\right)$积分，得到包含能量$E(\mathbf{x})$的函数。（能量的梯度数值就是弹力大小，方向相反）
-* 数学表达式： $\|\mathbf{x}\|_{\mathbf{M}}^2=\mathbf{x}^{\mathbf{T}} \mathbf{M} \mathbf{x}$
+#### 将隐式积分问题转化成优化问题
+
+下面的总览图先给出核心结论：隐式欧拉的位置方程，等价于最小化一个“惯性预测误差 + 势能”的增量势能。图中的梯度为零条件正好能还原出原始的隐式位置方程。
+
+![隐式积分与增量势能最小化的等价关系](./Image/implicit-integration-optimization-equivalence.png)
+
+这个等价关系只要求力是保守力，即：$\mathbf f(\mathbf x)=-\nabla E(\mathbf x)$；它不仅适用于质点—弹簧系统，也适用于任意可由势能描述的系统。
+
+为便于在网页中复制和推导，记质量加权范数：
+
+$$
+\|\mathbf z\|_{\mathbf M}^2=\mathbf z^T\mathbf M\mathbf z.
+$$
+
+相应的增量势能为：
 $$
 \begin{gathered}
 F(\mathbf{x})=\frac{1}{2 \Delta t^2}\left\|\mathbf{x}-\mathbf{x}^{[0]}- \Delta t \mathbf{v}^{[0]}\right\|_{\mathbf{M}}^2+E(\mathbf{x}) \\
 \mathbf{x}^{[1]}=\text{argmin} F(\mathbf{x})\\
 \end{gathered}\\
 $$
-在优化问题中： $\nabla F\left(\mathbf{x}^{[1]}\right)=\frac{1}{\Delta t^2} \mathbf{M}\left(\mathbf{x}^{[1]}-\mathbf{x}^{[0]}-\Delta t \mathbf{v}^{[0]}\right)-\mathbf{f}\left(\mathbf{x}^{[1]}\right)=\mathbf{0}$可以找到最优解。
+
+验证等价性时，只需令：
+
+$$
+\nabla F\left(\mathbf{x}^{[1]}\right)
+=\frac{1}{\Delta t^2} \mathbf{M}
+\left(\mathbf{x}^{[1]}-\mathbf{x}^{[0]}-\Delta t\,\mathbf{v}^{[0]}\right)
+-\mathbf{f}\left(\mathbf{x}^{[1]}\right)
+=\mathbf{0}.
+$$
+
+左乘 $\Delta t^2\mathbf M^{-1}$ 后便得到原来的隐式位置方程。
 
 >Note: 
 >* 采用优化问题：可以站在更高的维度看待问题，这个方法不仅仅能够使用在弹簧系统中，也适用于其他系统
@@ -185,20 +271,103 @@ $$
 牛顿法迭代求解：
 ![](./Image/Newton_Method.png)
 
-求解未知量：
-* $F^{\prime}(x^{(k)}) = \nabla F\left(\mathbf{x}^{(k)}\right)=\frac{1}{\Delta t^2} \mathbf{M}\left(\mathbf{x}^{(k)}-\mathbf{x}^{[0]}-\Delta t \mathbf{v}^{[0]}\right)-\mathbf{f}\left(\mathbf{x}^{(k)}\right)$
-* $F^{\prime\prime}(x^{(k)}) = \frac{\partial^2 F\left(\mathbf{x}^{(k)}\right)}{\partial \mathbf{x}^2}=\frac{1}{\Delta t^2} \mathbf{M}+\mathbf{H}\left(\mathbf{x}^{(k)}\right)$
-* 关于hessian矩阵$\mathbf{H}\left(\mathbf{x}^{(k)}\right)$推导可以参考[质点弹簧系统](https://zhuanlan.zhihu.com/p/557061822)部分
+#### Newton 迭代中的梯度与 Hessian
 
-将以上带入优化方程中有算法,其中$\Delta \mathbf{x} = \mathbf{x}^{(k+1)} - \mathbf{x}^{(k)}$：
+图中写成 $F'(x^{(k)})$、$F''(x^{(k)})$ 容易让人误以为 $x$ 是标量。这里 $\mathbf{x}$ 是所有顶点位置拼成的**向量**，更严格的记号应是梯度 $\nabla F$ 与 Hessian $\nabla^2 F$。
+
+记自由飞行预测位置为：
+
+$$
+\mathbf y=\mathbf{x}^{[0]}+\Delta t\,\mathbf v^{[0]}.
+$$
+
+在第 $k$ 次 Newton 迭代点 $\mathbf{x}^{(k)}$，增量势能的梯度为：
+
+$$
+\begin{aligned}
+\mathbf g^{(k)}
+&\equiv \nabla F\left(\mathbf{x}^{(k)}\right)\\
+&=\frac{1}{\Delta t^2}\mathbf M
+\left(\mathbf{x}^{(k)}-\mathbf y\right)
+-\mathbf f\left(\mathbf{x}^{(k)}\right)\\
+&=\frac{1}{\Delta t^2}\mathbf M
+\left(
+\mathbf{x}^{(k)}-\mathbf{x}^{[0]}-\Delta t\,\mathbf v^{[0]}
+\right)
+-\mathbf f\left(\mathbf{x}^{(k)}\right).
+\end{aligned}
+$$
+
+其中使用了保守力关系 $\mathbf f(\mathbf x)=-\nabla E(\mathbf x)$。完整增量势能的 Hessian 为：
+
+$$
+\begin{aligned}
+\mathbf H_F^{(k)}
+&\equiv \nabla^2 F\left(\mathbf{x}^{(k)}\right)\\
+&=\frac{1}{\Delta t^2}\mathbf M
++\mathbf H_E\left(\mathbf{x}^{(k)}\right),
+\end{aligned}
+$$
+
+其中：
+
+$$
+\mathbf H_E(\mathbf x)
+=\nabla^2 E(\mathbf x)
+=-\frac{\partial\mathbf f(\mathbf x)}{\partial\mathbf x}
+$$
+
+是弹簧势能的 Hessian；而 $\mathbf H_F$ 才是 Newton 系统使用的完整 Hessian。也就是说：
+
+$$
+\mathbf H_F
+=\underbrace{\frac{1}{\Delta t^2}\mathbf M}_{\text{惯性项}}
++\underbrace{\mathbf H_E}_{\text{弹性势能项}}.
+$$
+
+将以上带入 Newton 方程。令
+$\Delta\mathbf x=\mathbf{x}^{(k+1)}-\mathbf{x}^{(k)}$，则：
+
+$$
+\mathbf H_F^{(k)}\Delta\mathbf x
+=-\mathbf g^{(k)}.
+$$
+
+关于 $\mathbf H_E$ 从单根弹簧装配为全局稀疏矩阵、以及上述 Newton 方程的完整推导，可参考[布料物理模拟](./布料物理模拟.md)。
 ![](./Image/simulation_Newton_Method.png)
 
 **求解线性系统**
 
-对Solve $\left(\frac{1}{\Delta t^2} \mathbf{M}+\mathbf{H}\left(\mathbf{x}^{(k)}\right)\right) \Delta \mathbf{x}=-\frac{1}{\Delta t^2} \mathbf{M}\left(\mathbf{x}^{(k)}-\mathbf{x}^{[0]}-\Delta t \mathbf{v}^{[0]}\right)+\mathbf{f}\left(\mathbf{x}^{(k)}\right)$简化得到线性方程：
+将 Newton 方程写成标准的线性系统形式：
+
 $$
-\mathbf{A} \Delta \mathbf{x}=\mathbf{b}\\
+\mathbf A^{(k)}\Delta\mathbf x=\mathbf b^{(k)},
 $$
+
+其中：
+
+$$
+\begin{aligned}
+\mathbf A^{(k)}
+&=\mathbf H_F^{(k)}
+=\frac{1}{\Delta t^2}\mathbf M
++\mathbf H_E\left(\mathbf x^{(k)}\right),\\
+\mathbf b^{(k)}
+&=-\mathbf g^{(k)}\\
+&=-\frac{1}{\Delta t^2}\mathbf M
+\left(
+\mathbf x^{(k)}-\mathbf x^{[0]}-\Delta t\,\mathbf v^{[0]}
+\right)
++\mathbf f\left(\mathbf x^{(k)}\right).
+\end{aligned}
+$$
+
+也就是说，解出的未知量是本轮位置修正 $\Delta\mathbf x$，而不是直接求新的位置；随后更新：
+
+$$
+\mathbf x^{(k+1)}=\mathbf x^{(k)}+\Delta\mathbf x.
+$$
+
 求解方法，具体可以参考[线性方程组数值解法](https://zhuanlan.zhihu.com/p/557061822)：
 * 方法一， 直接法： 
   * LU 分解、LDLT 分解、Cholesky 分解
@@ -214,9 +383,9 @@ $$
 
 **Hessian 的正定性 Positive Definiteness of Hessian**
 
-求解Hessian 矩阵 $\mathbf{H}\left(\mathbf{x}^{(k)}\right)$
+下面讨论的是弹性势能 Hessian $\mathbf H_E\left(\mathbf{x}^{(k)}\right)$：
 $$
-\mathbf{H}(\mathbf{x})=\sum_{e=\{i, j\}}\left[\begin{array}{cc}
+\mathbf{H}_E(\mathbf{x})=\sum_{e=\{i, j\}}\left[\begin{array}{cc}
 \frac{\partial^2 E}{\partial \mathbf{x}_i^2} & \frac{\partial^2 E}{\partial \mathbf{x}_i \partial \mathbf{x}_j} \\
 \frac{\partial^2 E}{\partial \mathbf{x}_i \partial \mathbf{x}_j} & \frac{\partial^2 E}{\partial \mathbf{x}_j^2}
 \end{array}\right]=\sum_{e=\{i, j\}}\left[\begin{array}{cc}
@@ -224,17 +393,45 @@ $$
 -\mathbf{H}_e & \mathbf{H}_e
 \end{array}\right]
 $$
-其中有：
-![](./Image/Spring_Hessian.png)
-因为对于任意的$\mathbf{x}_{i j}, \mathbf{v} \neq \mathbf{0}$，绿色矩阵是正定的：
+其中 $\mathbf H_e$ 的两个投影项有如下性质。令
+$\mathbf n=\mathbf x_{ij}/\|\mathbf x_{ij}\|$，则：
+
 $$
-\mathbf{v}^{\mathrm{T}} \frac{\mathbf{x}_{i j} \mathbf{x}_{i j}{ }^{\mathrm{T}}}{\left\|\mathbf{x}_{i j}\right\|^2} \mathbf{v}=\left\|\mathbf{x}_{i j}{ }^{\mathrm{T}} \mathbf{v}\right\|^2\|\|^2>0  \qquad \mathbf{v}^{\mathrm{T}}\left(\mathbf{I}-\frac{\mathbf{x}_{i j} \mathbf{x}_{i j}{ }^{\mathrm{T}}}{\left\|\mathbf{x}_{i j}\right\|^2}\right) \mathbf{v}=\frac{\left\|\mathbf{x}_{i j}\right\|^2\|\mathbf{v}\|^2-\left\|\mathbf{x}_{i j}{ }^{\mathrm{T}} \mathbf{v}\right\|^2}{\left\|\mathbf{x}_{i j}\right\|^2} \geq 0
+\mathbf v^T\mathbf n\mathbf n^T\mathbf v
+=\left(\mathbf n^T\mathbf v\right)^2
+\geq0,
 $$
 
-* 当弹簧被拉伸时候，橙色部分大于等于0（弹簧被拉伸），$\bf H_e$是正定矩阵，当压缩时候，橙色小于0，就无法却确定$\bf H_e$的正定性。
-* 而对于A矩阵而言也是无法确定正定性：
 $$
-\mathbf{A}=\frac{1}{\Delta t^2} \mathbf{M}+\mathbf{H}(\mathbf{x})=\frac{1}{\Delta t^2} \mathbf{M}+\sum_{e=\{i, j\}}\left[\begin{array}{ccccc}
+\begin{aligned}
+\mathbf v^T\left(\mathbf I-\mathbf n\mathbf n^T\right)\mathbf v
+&=\|\mathbf v\|^2-\left(\mathbf n^T\mathbf v\right)^2\\
+&\geq0.
+\end{aligned}
+$$
+
+两者都是**半正定**，而不是对任意 $\mathbf v\ne\mathbf0$ 都严格为正：当 $\mathbf v\perp\mathbf n$ 时，第一项为零；当 $\mathbf v\parallel\mathbf n$ 时，第二项为零。
+
+![](./Image/Spring_Hessian.png)
+
+回忆局部 Hessian：
+
+$$
+\mathbf H_e
+=k\mathbf n\mathbf n^T
++k\left(1-\frac{L}{\|\mathbf x_{ij}\|}\right)
+\left(\mathbf I-\mathbf n\mathbf n^T\right).
+$$
+
+因此：
+
+* 当弹簧被严格拉伸，即 $\|\mathbf x_{ij}\|>L$ 时，横向系数为正，$\mathbf H_e$ 是正定的；
+* 当弹簧恰好处于静止长度，即 $\|\mathbf x_{ij}\|=L$ 时，横向系数为零，$\mathbf H_e$ 只有半正定；
+* 当弹簧被压缩，即 $\|\mathbf x_{ij}\|<L$ 时，横向系数为负，$\mathbf H_e$ 变为不定矩阵。
+
+对于 Newton 系统矩阵，也不能仅由 $\mathbf H_E$ 的性质直接断言正定性：
+$$
+\mathbf{A}=\frac{1}{\Delta t^2} \mathbf{M}+\mathbf{H}_E(\mathbf{x})=\frac{1}{\Delta t^2} \mathbf{M}+\sum_{e=\{i, j\}}\left[\begin{array}{ccccc}
 \ddots & \vdots & \vdots & \vdots \\
 \vdots & \mathbf{H}_e & -\mathbf{H}_e & \vdots \\
 \vdots & -\mathbf{H}_e & \mathbf{H}_e & \vdots \\
